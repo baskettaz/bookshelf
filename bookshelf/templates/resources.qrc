@@ -1,0 +1,12 @@
+{# List of relevant parameters  #}
+{# ---------------------------- #}
+{# icons - list[Path]           #}
+{# ---------------------------- #}
+<!DOCTYPE RCC>
+<RCC version="1.0">
+	<qresource prefix = "icons">
+	    {%- for icon in icons %}
+            <file alias="{{ icon.stem }}">.\icons\{{ icon.name }}</file>
+        {%- endfor %}
+	</qresource>
+</RCC>
