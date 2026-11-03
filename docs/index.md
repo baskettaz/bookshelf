@@ -4,7 +4,19 @@ icon: lucide/rocket
 
 # Get started
 
-For full documentation visit [zensical.org](https://zensical.org/docs/).
+## Run MyBookShelf
+
+Install the project dependencies and start the desktop app:
+
+```shell
+uv sync
+uv run python -m bookshelf
+```
+
+The interface is defined in Qt Designer `.ui` files under `bookshelf/gui/` and
+loaded when the app starts. Edit those files directly; no UI compilation step is
+used. Your library database is stored in your operating system's per-user data
+directory.
 
 ## Commands
 

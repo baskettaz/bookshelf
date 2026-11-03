@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle">
+   <string>MyBookShelf</string>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1080</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow { background: #f5f4f0; } QWidget#centralWidget { background: #f5f4f0; } QWidget#sidebar { background: #172b3b; } QLabel#brandMark { background: #e4a866; color: #172b3b; border-radius: 12px; font-size: 22px; font-weight: 800; } QLabel#brandName { color: #fffaf3; font-size: 19px; font-weight: 750; } QLabel#brandCaption { color: #9cabb4; font-size: 10px; letter-spacing: 1px; } QLabel#sideSectionLabel { color: #80929e; font-size: 10px; font-weight: 700; letter-spacing: 1px; } QPushButton#navAll, QPushButton#navToRead, QPushButton#navReading, QPushButton#navCompleted, QPushButton#navOnHold, QPushButton#navAbandoned { color: #c3cdd2; background: transparent; border: 0; border-radius: 8px; text-align: left; padding: 10px 12px; font-size: 13px; font-weight: 550; } QPushButton#navAll:checked, QPushButton#navToRead:checked, QPushButton#navReading:checked, QPushButton#navCompleted:checked, QPushButton#navOnHold:checked, QPushButton#navAbandoned:checked { color: #fffaf3; background: #294253; font-weight: 700; } QPushButton#navAll:hover, QPushButton#navToRead:hover, QPushButton#navReading:hover, QPushButton#navCompleted:hover, QPushButton#navOnHold:hover, QPushButton#navAbandoned:hover { background: #233b4b; } QFrame#sidebarDivider { background: #304351; max-height: 1px; } QLabel#privacyTitle { color: #e6b16f; font-size: 10px; font-weight: 750; letter-spacing: 1px; } QLabel#privacyText { color: #9cabb4; font-size: 11px; } QLabel#eyebrow { color: #9b7653; font-size: 10px; font-weight: 750; letter-spacing: 1.4px; } QLabel#pageTitle { color: #203748; font-size: 28px; font-weight: 750; } QLabel#pageSubtitle { color: #7b858b; font-size: 12px; } QPushButton#addBookButton { color: #fffaf3; background: #24485b; border: 0; border-radius: 9px; padding: 11px 18px; font-size: 12px; font-weight: 700; } QPushButton#addBookButton:hover { background: #315d72; } QFrame.statCard { background: #ffffff; border: 1px solid #eae8e2; border-radius: 12px; } QLabel.statValue { color: #203748; font-size: 25px; font-weight: 750; } QLabel.statCaption { color: #81898d; font-size: 11px; } QLabel.statAccent { color: #c58c4f; font-size: 10px; font-weight: 750; } QFrame#filterPanel { background: #ffffff; border: 1px solid #eae8e2; border-radius: 11px; } QLineEdit#searchInput, QLineEdit#yearFilter, QComboBox#genreFilter, QComboBox#statusFilter, QComboBox#ratingFilter, QComboBox#sortFilter { color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 7px; padding: 8px 10px; selection-background-color: #315d72; font-size: 11px; } QLineEdit#searchInput:focus, QLineEdit#yearFilter:focus, QComboBox#genreFilter:focus, QComboBox#statusFilter:focus, QComboBox#ratingFilter:focus, QComboBox#sortFilter:focus { border: 1px solid #86a6ae; background: #ffffff; } QComboBox#genreFilter::drop-down, QComboBox#statusFilter::drop-down, QComboBox#ratingFilter::drop-down, QComboBox#sortFilter::drop-down { border: 0; width: 22px; } QPushButton#clearFiltersButton { color: #60737b; background: transparent; border: 0; padding: 6px 8px; font-size: 11px; font-weight: 650; } QPushButton#clearFiltersButton:hover { color: #24485b; } QLabel#sectionTitle { color: #263e4c; font-size: 15px; font-weight: 700; } QLabel#resultCount { color: #879096; font-size: 11px; } QTableWidget#booksTable { color: #36474f; background: #ffffff; alternate-background-color: #fbfaf7; border: 1px solid #eae8e2; border-radius: 10px; gridline-color: transparent; selection-background-color: #e9f0ef; selection-color: #203748; font-size: 11px; } QTableWidget#booksTable::item { border-bottom: 1px solid #f0efeb; padding: 8px 10px; } QHeaderView::section { color: #8c9395; background: #ffffff; border: 0; border-bottom: 1px solid #eae8e2; padding: 11px 10px; font-size: 10px; font-weight: 750; letter-spacing: 0.5px; } QFrame#emptyState { background: #ffffff; border: 1px solid #eae8e2; border-radius: 10px; } QLabel#emptyMark { color: #c58c4f; background: #faf2e7; border-radius: 28px; font-size: 22px; font-weight: 700; } QLabel#emptyTitle { color: #263e4c; font-size: 17px; font-weight: 700; } QLabel#emptySubtitle { color: #858e91; font-size: 12px; } QLabel#footerNote { color: #9a9e9c; font-size: 10px; }</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="rootLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="sidebar">
+      <property name="minimumSize">
+       <size>
+        <width>226</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>226</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="sidebarLayout">
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>24</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>20</number>
+       </property>
+       <property name="spacing">
+        <number>7</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="brandLayout">
+         <property name="spacing">
+          <number>11</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="brandMark">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="editBookButton">
+           <property name="minimumSize">
+            <size>
+             <width>84</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Edit</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton#editBookButton { color: #53636b; background: #ffffff; border: 1px solid #deded8; border-radius: 8px; padding: 9px 14px; font-size: 11px; font-weight: 650; } QPushButton#editBookButton:hover:enabled { color: #24485b; border-color: #9aafb1; } QPushButton#editBookButton:disabled { color: #b6b9b6; background: #f0efeb; border-color: #e8e6e1; }</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deleteBookButton">
+           <property name="minimumSize">
+            <size>
+             <width>84</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Remove</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton#deleteBookButton { color: #8d5b52; background: #ffffff; border: 1px solid #eadbd7; border-radius: 8px; padding: 9px 13px; font-size: 11px; font-weight: 650; } QPushButton#deleteBookButton:hover:enabled { background: #fbefed; } QPushButton#deleteBookButton:disabled { color: #b9b2af; background: #f0efeb; border-color: #e8e6e1; }</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="brandTextLayout">
+           <property name="spacing">
+            <number>1</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="brandName">
+             <property name="text">
+              <string>MyBookShelf</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="brandCaption">
+             <property name="text">
+              <string>A LITTLE HOME FOR BOOKS</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="brandSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>30</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="sideSectionLabel">
+         <property name="text">
+          <string>YOUR LIBRARY</string>
+         </property>
+         <property name="indent">
+          <number>5</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navAll">
+         <property name="text">
+          <string>All books</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navToRead">
+         <property name="text">
+          <string>To read</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navReading">
+         <property name="text">
+          <string>Currently reading</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navCompleted">
+         <property name="text">
+          <string>Finished</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navOnHold">
+         <property name="text">
+          <string>On hold</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="navAbandoned">
+         <property name="text">
+          <string>Abandoned</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="sidebarBottomSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QFrame" name="sidebarDivider">
+         <property name="frameShape">
+          <enum>QFrame::Shape::HLine</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Plain</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="privacyTitle">
+         <property name="text">
+          <string>PRIVATE BY DESIGN</string>
+         </property>
+         <property name="indent">
+          <number>4</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="privacyText">
+         <property name="text">
+          <string>Your collection stays right here on this device.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+         <property name="indent">
+          <number>4</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="contentLayout">
+      <property name="leftMargin">
+       <number>34</number>
+      </property>
+      <property name="topMargin">
+       <number>25</number>
+      </property>
+      <property name="rightMargin">
+       <number>34</number>
+      </property>
+      <property name="bottomMargin">
+       <number>18</number>
+      </property>
+      <property name="spacing">
+       <number>16</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="headerLayout">
+        <item>
+         <layout class="QVBoxLayout" name="headingLayout">
+          <property name="spacing">
+           <number>3</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="eyebrow">
+            <property name="text">
+             <string>YOUR PERSONAL LIBRARY</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="pageTitle">
+            <property name="text">
+             <string>Your bookshelf</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="pageSubtitle">
+            <property name="text">
+             <string>Every good story, all in one place.</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="headerSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="addBookButton">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>42</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>+   Add a book</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="statsLayout">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QFrame" name="totalCard">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>92</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QFrame#totalCard { background: #ffffff; border: 1px solid #eae8e2; border-radius: 12px; }</string>
+          </property>
+          <layout class="QVBoxLayout" name="totalCardLayout">
+           <property name="leftMargin">
+            <number>17</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>17</number>
+           </property>
+           <property name="bottomMargin">
+            <number>10</number>
+           </property>
+           <property name="spacing">
+            <number>2</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="totalValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #203748; font-size: 25px; font-weight: 750;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="totalCaption">
+             <property name="text">
+              <string>Books in your library</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #81898d; font-size: 11px;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="readingCard">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>92</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QFrame#readingCard { background: #ffffff; border: 1px solid #eae8e2; border-radius: 12px; }</string>
+          </property>
+          <layout class="QVBoxLayout" name="readingCardLayout">
+           <property name="leftMargin">
+            <number>17</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>17</number>
+           </property>
+           <property name="bottomMargin">
+            <number>10</number>
+           </property>
+           <property name="spacing">
+            <number>2</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="readingValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #587d70; font-size: 25px; font-weight: 750;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="readingCaption">
+             <property name="text">
+              <string>Currently reading</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #81898d; font-size: 11px;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="completedCard">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>92</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QFrame#completedCard { background: #ffffff; border: 1px solid #eae8e2; border-radius: 12px; }</string>
+          </property>
+          <layout class="QVBoxLayout" name="completedCardLayout">
+           <property name="leftMargin">
+            <number>17</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>17</number>
+           </property>
+           <property name="bottomMargin">
+            <number>10</number>
+           </property>
+           <property name="spacing">
+            <number>2</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="completedValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #b17e4c; font-size: 25px; font-weight: 750;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="completedCaption">
+             <property name="text">
+              <string>Stories finished</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #81898d; font-size: 11px;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QFrame" name="filterPanel">
+        <layout class="QVBoxLayout" name="filterPanelLayout">
+         <property name="leftMargin">
+          <number>12</number>
+         </property>
+         <property name="topMargin">
+          <number>12</number>
+         </property>
+         <property name="rightMargin">
+          <number>12</number>
+         </property>
+         <property name="bottomMargin">
+          <number>12</number>
+         </property>
+         <property name="spacing">
+          <number>8</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="searchLayout">
+           <property name="spacing">
+            <number>8</number>
+           </property>
+           <item>
+            <widget class="QLineEdit" name="searchInput">
+             <property name="minimumSize">
+              <size>
+               <width>230</width>
+               <height>37</height>
+              </size>
+             </property>
+             <property name="placeholderText">
+              <string>Search title, author, ISBN or publisher...</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="genreFilter">
+             <property name="minimumSize">
+              <size>
+               <width>130</width>
+               <height>37</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Filter by genre</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="statusFilter">
+             <property name="minimumSize">
+              <size>
+               <width>125</width>
+               <height>37</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Filter by reading status</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="ratingFilter">
+             <property name="minimumSize">
+              <size>
+               <width>105</width>
+               <height>37</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Filter by rating</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="secondaryFiltersLayout">
+           <property name="spacing">
+            <number>8</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="yearLabel">
+             <property name="text">
+              <string>Published</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #858e91; font-size: 10px; font-weight: 650;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="yearFilter">
+             <property name="maximumSize">
+              <size>
+               <width>85</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="placeholderText">
+              <string>Any year</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="sortLabel">
+             <property name="text">
+              <string>Sort by</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #858e91; font-size: 10px; font-weight: 650;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="sortFilter">
+             <property name="minimumSize">
+              <size>
+               <width>145</width>
+               <height>34</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="filtersSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="clearFiltersButton">
+             <property name="text">
+              <string>Clear filters</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="collectionHeadingLayout">
+        <item>
+         <widget class="QLabel" name="sectionTitle">
+          <property name="text">
+           <string>All books</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="collectionHeadingSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="resultCount">
+          <property name="text">
+           <string>0 books</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="collectionStack">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QTableWidget" name="booksTable">
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+         </property>
+         <property name="showGrid">
+          <bool>false</bool>
+         </property>
+         <property name="sortingEnabled">
+          <bool>false</bool>
+         </property>
+         <property name="columnCount">
+          <number>6</number>
+         </property>
+         <column>
+          <property name="text">
+           <string>TITLE</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>AUTHOR</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>GENRE</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>YEAR</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>STATUS</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>RATING</string>
+          </property>
+         </column>
+        </widget>
+        <widget class="QFrame" name="emptyState">
+         <layout class="QVBoxLayout" name="emptyLayout">
+          <property name="leftMargin">
+           <number>30</number>
+          </property>
+          <property name="topMargin">
+           <number>30</number>
+          </property>
+          <property name="rightMargin">
+           <number>30</number>
+          </property>
+          <property name="bottomMargin">
+           <number>30</number>
+          </property>
+          <item>
+           <spacer name="emptyTopSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>30</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="emptyMark">
+            <property name="minimumSize">
+             <size>
+              <width>56</width>
+              <height>56</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>56</width>
+              <height>56</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>+</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="emptyTitle">
+            <property name="text">
+             <string>Your next favorite is waiting.</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="emptySubtitle">
+            <property name="text">
+             <string>Add a book to start building your personal library.</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="emptyAddButton">
+            <property name="maximumSize">
+             <size>
+              <width>160</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>+   Add your first book</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton#emptyAddButton { color: #fffaf3; background: #24485b; border: 0; border-radius: 8px; padding: 10px 14px; font-size: 11px; font-weight: 700; } QPushButton#emptyAddButton:hover { background: #315d72; }</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="emptyBottomSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>30</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="footerNote">
+        <property name="text">
+         <string>Select a book to edit it, or double-click to see the details.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

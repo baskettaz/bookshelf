@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BookDialog</class>
+ <widget class="QDialog" name="BookDialog">
+  <property name="windowTitle">
+   <string>Add a book</string>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>560</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>900</width>
+    <height>760</height>
+   </size>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog { background: #f5f4f0; } QLabel#dialogEyebrow { color: #9b7653; font-size: 10px; font-weight: 750; letter-spacing: 1.2px; } QLabel#dialogTitle { color: #203748; font-size: 23px; font-weight: 750; } QLabel#dialogSubtitle { color: #7b858b; font-size: 11px; } QFrame#formCard { background: #ffffff; border: 1px solid #eae8e2; border-radius: 10px; } QLabel.formLabel { color: #53636b; font-size: 11px; font-weight: 650; } QLineEdit.formInput, QComboBox.formInput, QTextEdit.formInput { color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 8px 9px; selection-background-color: #315d72; font-size: 11px; } QLineEdit.formInput:focus, QComboBox.formInput:focus, QTextEdit.formInput:focus { border: 1px solid #86a6ae; background: #ffffff; } QLabel#formError { color: #a64e43; background: #fbefed; border: 1px solid #f0d7d2; border-radius: 6px; padding: 8px; font-size: 11px; } QPushButton#cancelButton { color: #60737b; background: #ffffff; border: 1px solid #deded8; border-radius: 7px; padding: 9px 16px; font-size: 11px; font-weight: 650; } QPushButton#saveButton { color: #fffaf3; background: #24485b; border: 0; border-radius: 7px; padding: 9px 19px; font-size: 11px; font-weight: 700; } QPushButton#saveButton:hover { background: #315d72; }</string>
+  </property>
+  <layout class="QVBoxLayout" name="dialogLayout">
+   <property name="leftMargin">
+    <number>24</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>24</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <property name="spacing">
+    <number>12</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="dialogEyebrow">
+     <property name="text">
+      <string>MAKE IT YOURS</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="dialogTitle">
+     <property name="text">
+      <string>Add a book</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="dialogSubtitle">
+     <property name="text">
+      <string>A few details now make it easy to find again later.</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="formScrollArea">
+     <property name="frameShape">
+      <enum>QFrame::Shape::NoFrame</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="formScrollContent">
+      <layout class="QVBoxLayout" name="formScrollLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>4</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+    <widget class="QFrame" name="formCard">
+     <layout class="QVBoxLayout" name="formCardLayout">
+      <property name="leftMargin">
+       <number>18</number>
+      </property>
+      <property name="topMargin">
+       <number>16</number>
+      </property>
+      <property name="rightMargin">
+       <number>18</number>
+      </property>
+      <property name="bottomMargin">
+       <number>16</number>
+      </property>
+      <property name="spacing">
+       <number>9</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="titleAuthorLayout">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="titleFieldLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="titleLabel">
+            <property name="text">
+             <string>Title *</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="titleInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>36</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Book title</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 8px 9px; font-size: 11px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="authorFieldLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="authorLabel">
+            <property name="text">
+             <string>Author *</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="authorInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>36</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Author name</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 8px 9px; font-size: 11px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="isbnPublisherLayout">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="isbnFieldLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="isbnLabel">
+            <property name="text">
+             <string>ISBN</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="isbnInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>ISBN-10 or ISBN-13</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="publisherFieldLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="publisherLabel">
+            <property name="text">
+             <string>Publisher</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="publisherInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Publisher name</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="categoryLayout">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="genreFieldLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="genreLabel">
+            <property name="text">
+             <string>Genre</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="genreInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>e.g. Fiction</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="languageFieldLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="languageLabel">
+            <property name="text">
+             <string>Language</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="languageInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>e.g. English</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="detailsFieldsLayout">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="yearFieldLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="yearInputLabel">
+            <property name="text">
+             <string>Publication year</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="yearInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Optional</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="pageCountFieldLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="pageCountLabel">
+            <property name="text">
+             <string>Pages</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="pageCountInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Optional</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="ratingFieldLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="ratingLabel">
+            <property name="text">
+             <string>Your rating</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="ratingInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="statusFieldLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="statusLabel">
+            <property name="text">
+             <string>Reading status</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="statusInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="dateFinishedLayout">
+        <item>
+         <layout class="QVBoxLayout" name="dateFinishedFieldLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="dateFinishedLabel">
+            <property name="text">
+             <string>Date finished</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="dateFinishedInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>YYYY-MM-DD</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="dateSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="descriptionFieldLayout">
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="descriptionLabel">
+          <property name="text">
+           <string>Description</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="descriptionInput">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>58</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="placeholderText">
+           <string>A short synopsis, if you like...</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="notesFieldLayout">
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="notesLabel">
+          <property name="text">
+           <string>Personal notes</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #53636b; font-size: 11px; font-weight: 650;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="notesInput">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>58</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="placeholderText">
+           <string>Your thoughts, favorite passages, or who borrowed it...</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="formError">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <property name="visible">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #a64e43; background: #fbefed; border: 1px solid #f0d7d2; border-radius: 6px; padding: 8px; font-size: 11px;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="buttonsLayout">
+     <item>
+      <spacer name="buttonsSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #60737b; background: #ffffff; border: 1px solid #deded8; border-radius: 7px; padding: 9px 16px; font-size: 11px; font-weight: 650;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveButton">
+       <property name="text">
+        <string>Save book</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #fffaf3; background: #24485b; border: 0; border-radius: 7px; padding: 9px 19px; font-size: 11px; font-weight: 700;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

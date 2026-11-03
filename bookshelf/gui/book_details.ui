@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BookDetailsDialog</class>
+ <widget class="QDialog" name="BookDetailsDialog">
+  <property name="windowTitle">
+   <string>Book details</string>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>540</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog { background: #f5f4f0; } QLabel#detailsEyebrow { color: #9b7653; font-size: 10px; font-weight: 750; letter-spacing: 1.2px; } QLabel#detailsTitle { color: #203748; font-size: 24px; font-weight: 750; } QLabel#detailsAuthor { color: #66777e; font-size: 13px; } QLabel.sectionLabel { color: #9b7653; font-size: 10px; font-weight: 750; letter-spacing: 0.8px; } QLabel.detailsValue { color: #344852; font-size: 11px; } QFrame#detailsCard { background: #ffffff; border: 1px solid #eae8e2; border-radius: 10px; } QComboBox#statusInput { color: #344852; background: #faf9f6; border: 1px solid #e7e5df; border-radius: 6px; padding: 7px 9px; font-size: 11px; } QPushButton#changeStatusButton { color: #53636b; background: #ffffff; border: 1px solid #deded8; border-radius: 7px; padding: 7px 12px; font-size: 10px; font-weight: 650; } QPushButton#detailsEditButton { color: #fffaf3; background: #24485b; border: 0; border-radius: 7px; padding: 9px 18px; font-size: 11px; font-weight: 700; } QPushButton#detailsEditButton:hover { background: #315d72; } QPushButton#detailsCloseButton { color: #60737b; background: #ffffff; border: 1px solid #deded8; border-radius: 7px; padding: 9px 16px; font-size: 11px; font-weight: 650; }</string>
+  </property>
+  <layout class="QVBoxLayout" name="detailsLayout">
+   <property name="leftMargin">
+    <number>24</number>
+   </property>
+   <property name="topMargin">
+    <number>22</number>
+   </property>
+   <property name="rightMargin">
+    <number>24</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <property name="spacing">
+    <number>11</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="detailsEyebrow">
+     <property name="text">
+      <string>ON YOUR BOOKSHELF</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="detailsTitle">
+     <property name="text">
+      <string>Book title</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="detailsAuthor">
+     <property name="text">
+      <string>by Author</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="detailsCard">
+     <layout class="QVBoxLayout" name="detailsCardLayout">
+      <property name="leftMargin">
+       <number>18</number>
+      </property>
+      <property name="topMargin">
+       <number>16</number>
+      </property>
+      <property name="rightMargin">
+       <number>18</number>
+      </property>
+      <property name="bottomMargin">
+       <number>16</number>
+      </property>
+      <property name="spacing">
+       <number>9</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="detailsMetaLayout">
+        <item>
+         <widget class="QLabel" name="statusSectionLabel">
+          <property name="text">
+           <string>STATUS</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #9b7653; font-size: 10px; font-weight: 750; letter-spacing: 0.8px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="detailsStatus">
+          <property name="text">
+           <string>To Read</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #344852; font-size: 11px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="detailsMetaSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>30</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="ratingSectionLabel">
+          <property name="text">
+           <string>RATING</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #9b7653; font-size: 10px; font-weight: 750; letter-spacing: 0.8px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="detailsRating">
+          <property name="text">
+           <string>Not rated</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #344852; font-size: 11px;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="statusChangeLayout">
+        <item>
+         <widget class="QLabel" name="statusChangeLabel">
+          <property name="text">
+           <string>Change status</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #858e91; font-size: 10px; font-weight: 650;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="statusInput"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="changeStatusButton">
+          <property name="text">
+           <string>Update</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="statusChangeSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="detailsMetadata">
+        <property name="text">
+         <string>Genre, year, publisher, ISBN</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #64757b; font-size: 11px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="detailsDivider">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: #eeece7; border: 0;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::HLine</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="descriptionSectionLabel">
+        <property name="text">
+         <string>ABOUT THIS BOOK</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #9b7653; font-size: 10px; font-weight: 750; letter-spacing: 0.8px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="detailsDescription">
+        <property name="text">
+         <string>No description added.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #52646c; font-size: 11px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="notesSectionLabel">
+        <property name="text">
+         <string>YOUR NOTES</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #9b7653; font-size: 10px; font-weight: 750; letter-spacing: 0.8px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="detailsNotes">
+        <property name="text">
+         <string>No personal notes.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #52646c; font-size: 11px;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="detailsButtonsLayout">
+     <item>
+      <spacer name="detailsButtonSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="detailsCloseButton">
+       <property name="text">
+        <string>Close</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #60737b; background: #ffffff; border: 1px solid #deded8; border-radius: 7px; padding: 9px 16px; font-size: 11px; font-weight: 650;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="detailsEditButton">
+       <property name="text">
+        <string>Edit book</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #fffaf3; background: #24485b; border: 0; border-radius: 7px; padding: 9px 18px; font-size: 11px; font-weight: 700;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

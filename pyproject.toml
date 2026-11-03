@@ -3,7 +3,7 @@ name = "bookshelf"
 version = "0.0.1"
 description = "Simple app for storage of my books - reading, read and to be read, but also virtual library to know what i have and where it is."
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 keywords = ["cookiecutter", "template", "qt"]
 classifiers = [
     "Development Status :: 4 - Beta",
